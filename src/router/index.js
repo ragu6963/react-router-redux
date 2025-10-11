@@ -42,7 +42,7 @@ const router = createBrowserRouter([
     Component: AuthLayout,
     children: [
       {
-        path: "",
+        path: "login",
         Component: Login,
       },
       {

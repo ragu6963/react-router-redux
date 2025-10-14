@@ -11,6 +11,7 @@ export default function RootLayout() {
         <Link to="/count-increment">카운터 증가</Link>
         <Link to="/count-decrement">카운터 감소</Link>
         <Link to="/count-view">카운터 조회</Link>
+        <Link to="/count-step">카운터 스텝</Link>
       </div>
       <main>
         <Outlet />

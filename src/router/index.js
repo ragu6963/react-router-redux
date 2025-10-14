@@ -12,6 +12,7 @@ import Profile from "../pages/Profile";
 import CountIncrement from "../pages/CountPages/CountIncrement";
 import CountDecrement from "../pages/CountPages/CountDecrement";
 import CountView from "../pages/CountPages/CountView";
+import StepSet from "../pages/CountPages/StepSet";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
       {
         path: "count-view",
         Component: CountView,
+      },
+      {
+        path: "count-step",
+        Component: StepSet,
       },
       {
         path: "about",

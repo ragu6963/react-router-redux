@@ -1,11 +1,17 @@
 // src/layouts/RootLayout.jsx
 
 import { Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function RootLayout() {
   return (
     <div>
-      <header>공통 헤더</header>
+      <div className="flex border-2 border-gray-300 gap-2 p-4">
+        <Link to="/">홈</Link>
+        <Link to="/count-increment">카운터 증가</Link>
+        <Link to="/count-decrement">카운터 감소</Link>
+        <Link to="/count-view">카운터 조회</Link>
+      </div>
       <main>
         <Outlet />
       </main>

@@ -10,8 +10,8 @@ export default function Products() {
   const [searchParams, setSearchParams] = useSearchParams();
 
   useEffect(() => {
-    const sortBy = searchParams.get("sortBy");
-    const order = searchParams.get("order");
+    const sortBy = searchParams.get("sortBy") ?? "id";
+    const order = searchParams.get("order") ?? "asc";
 
     const fetchProducts = async () => {
       setLoading(true);
@@ -19,8 +19,8 @@ export default function Products() {
         params: {
           skip: 0,
           limit: 10,
-          sortBy: sortBy || "id",
-          order: order || "asc",
+          sortBy: sortBy,
+          order: order,
         },
       };
       const res = await axios(`https://dummyjson.com/products`, config);

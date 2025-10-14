@@ -5,10 +5,13 @@ import Home from "../pages/Home";
 import About from "../pages/About";
 import Login from "../pages/Login";
 import Signup from "../pages/Signup";
-import PostList from "../pages/PostList";
 import PostDetail from "../pages/PostDetail";
-import Products from "../pages/Products";
+import PostList from "../pages/PostList";
+import ProductList from "../pages/ProductList";
 import Profile from "../pages/Profile";
+import CountIncrement from "../pages/CountPages/CountIncrement";
+import CountDecrement from "../pages/CountPages/CountDecrement";
+import CountView from "../pages/CountPages/CountView";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +21,18 @@ const router = createBrowserRouter([
       {
         index: true,
         Component: Home,
+      },
+      {
+        path: "count-increment",
+        Component: CountIncrement,
+      },
+      {
+        path: "count-decrement",
+        Component: CountDecrement,
+      },
+      {
+        path: "count-view",
+        Component: CountView,
       },
       {
         path: "about",
@@ -33,7 +48,7 @@ const router = createBrowserRouter([
       },
       {
         path: "products",
-        Component: Products,
+        Component: ProductList,
       },
     ],
   },

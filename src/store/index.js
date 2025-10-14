@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import authReducer from "./authSlice";
-
+import counterReducer from "./counterSlice";
 // Redux Persist 모듈 불러오기
 import { persistStore, persistReducer } from "redux-persist";
 // 로컬 스토리지 불러오기
@@ -19,6 +19,7 @@ const persistedAuthReducer = persistReducer(persistConfig, authReducer);
 export const store = configureStore({
   reducer: {
     auth: persistedAuthReducer,
+    counter: counterReducer,
   },
 });
 

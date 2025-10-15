@@ -6,6 +6,16 @@ import { persistStore, persistReducer } from "redux-persist";
 // 로컬 스토리지 불러오기
 import storage from "redux-persist/lib/storage";
 
+// Redux Persist 모듈 불러오기
+import {
+  FLUSH,
+  REHYDRATE,
+  PAUSE,
+  PERSIST,
+  PURGE,
+  REGISTER,
+} from "redux-persist";
+
 // Persist 리듀서 설정
 const persistConfig = {
   key: "auth", // 스토리지 키(Key) 이름
@@ -21,6 +31,12 @@ export const store = configureStore({
     auth: persistedAuthReducer,
     counter: counterReducer,
   },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+    }),
 });
 
 // Persist 스토어 생성

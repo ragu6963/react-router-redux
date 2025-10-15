@@ -63,6 +63,7 @@ const logout = createAsyncThunk(
 const initialState = {
   token: null,
   error: null,
+  isSignedUp: false,
 };
 
 const authSlice = createSlice({
@@ -80,6 +81,9 @@ const authSlice = createSlice({
       // 로그아웃 성공 시 토큰 제거
       .addCase(logout.fulfilled, (state) => {
         state.token = null;
+      })
+      .addCase(signup.fulfilled, (state) => {
+        state.isSignedUp = true;
       })
       // 모든 Thunk의 'pending' 상태를 한 번에 처리
       .addMatcher(

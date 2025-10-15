@@ -8,10 +8,10 @@ export default function RootLayout() {
     <div>
       <div className="flex border-2 border-gray-300 gap-2 p-4">
         <Link to="/">홈</Link>
-        <Link to="/count-increment">카운터 증가</Link>
-        <Link to="/count-decrement">카운터 감소</Link>
-        <Link to="/count-view">카운터 조회</Link>
-        <Link to="/count-step">카운터 스텝</Link>
+        <Link to="/posts">게시글</Link>
+        <Link to="/login">로그인</Link>
+        <Link to="/signup">회원가입</Link>
+        <Link to="/profile">프로필</Link>
       </div>
       <main>
         <Outlet />
